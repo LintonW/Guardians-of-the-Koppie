@@ -45,7 +45,7 @@
                 <a-image
                     src="./Assets/tap-to-start.svg"
                     class="clickable"
-                    position="0 2 0.1"
+                    position="0 1.5 0.1"
                     width="1"
                     height="1"
                     look-at="[gps-new-camera]">
@@ -56,11 +56,8 @@
         <script>
             const model = document.querySelector("#mymodel");
 
-            model.addEventListener("click", () => {
-                console.log("clicked!"); // confirm click fires
-                setTimeout(() => {
-                    model.setAttribute("gltf-model", "./Assets\earth-guardian.svg");
-                }, 100); // small delay
+            model.addEventListener("click", (e) => {
+                model.setAttribute("gltf-model", "./Assets\magnemite\scene.gltf");
             });
         </script>
     </body>
