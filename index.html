@@ -23,22 +23,28 @@
             vr-mode-ui="enabled: false"
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
             renderer="antialias: true; alpha: true">
-            <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
+            <a-camera gps-new-camera="gpsMinDistance: 5"><a-cursor></a-cursor></a-camera>
 
             <a-entity
+                id="mymodel"
                 gltf-model="./Assets/earth-runestone.glb"
                 rotation="0 0 0"
                 scale="2 2 2"
                 gps-new-entity-place="latitude: -26.021885; longitude: 28.030929"
-                animation-mixer>
-                <a-image
-                    src="./Assets/tap-to-start.svg"
-                    position="0 1 0.1"
-                    width="1.5"
-                    height="0.5"
-                    look-at="[gps-new-camera]">
+                animation-mixer
+                class="clickable">
+                <a-image src="./Assets/tap-to-start.svg" position="0 2 0.1" width="1" height="1" look-at="[gps-new-camera]">
                 </a-image>
             </a-entity>
         </a-scene>
+
+        <script>
+            const model = document.querySelector("#mymodel");
+
+            model.addEventListener("click", () => {
+                // Change the model to Earth Guardian
+                model.setAttribute("gltf-model", "./Assets/earth-guardian.svg");
+            });
+        </script>
     </body>
 </html>
