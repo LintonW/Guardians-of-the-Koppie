@@ -39,8 +39,10 @@
         </a-scene>
 
         <script>
-            document.querySelector("#mymodel").addEventListener("click", function (evt) {
-                model.setAttribute("gltf-model", "./Assets/earth-guardian.svg");
+            const model = document.querySelector("#mymodel");
+
+            model.addEventListener("click", () => {
+                model.setAttribute("gltf-model", "./Assets/earth-guardian.glb");
             });
         </script>
     </body>
