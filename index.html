@@ -25,7 +25,15 @@
             vr-mode-ui="enabled: false"
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
             renderer="antialias: true; alpha: true">
-            <a-camera gps-new-camera="gpsMinDistance: 5"><a-cursor raycaster="objects: .clickable"></a-cursor></a-camera>
+            <a-camera gps-new-camera="gpsMinDistance: 5"
+                ><a-cursor
+                    id="cursor"
+                    raycaster="objects: .clickable"
+                    material="color: cyan; shader: flat"
+                    geometry="radiusInner: 0.01; radiusOuter: 0.02"
+                    fuse="false">
+                </a-cursor
+            ></a-camera>
 
             <a-entity
                 id="mymodel"
@@ -35,7 +43,13 @@
                 gps-new-entity-place="latitude: -26.021885; longitude: 28.030929"
                 animation-mixer
                 class="clickable">
-                <a-image src="./Assets/tap-to-start.svg" position="0 2 0.1" width="1" height="1" look-at="[gps-new-camera]">
+                <a-image
+                    src="./Assets/tap-to-start.svg"
+                    class="clickable"
+                    position="0 2 0.1"
+                    width="1"
+                    height="1"
+                    look-at="[gps-new-camera]">
                 </a-image>
             </a-entity>
         </a-scene>
@@ -44,7 +58,7 @@
             const model = document.querySelector("#mymodel");
 
             model.addEventListener("click", () => {
-                model.setAttribute("gltf-model", "./Assets/earth-guardian.glb");
+                model.setAttribute("gltf-model", "./Assets/earth-guardian.svg");
             });
         </script>
     </body>
