@@ -29,7 +29,7 @@
                 ><a-cursor
                     id="cursor"
                     raycaster="objects: .clickable"
-                    material="color: cyan; shader: flat"
+                    material="color: white; shader: flat"
                     geometry="radiusInner: 0.01; radiusOuter: 0.02"
                     fuse="false">
                 </a-cursor
@@ -58,7 +58,7 @@
             const model = document.querySelector("#mymodel");
 
             model.addEventListener("click", () => {
-                model.setAttribute("gltf-model", "./Assets/earth-guardian.svg");
+                model.setAttribute("gltf-model", "./Assets\magnemite\scene.gltf");
             });
         </script>
     </body>
