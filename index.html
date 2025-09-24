@@ -23,7 +23,7 @@
             vr-mode-ui="enabled: false"
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
             renderer="antialias: true; alpha: true">
-            <a-camera gps-new-camera="gpsMinDistance: 5"><a-cursor></a-cursor></a-camera>
+            <a-camera gps-new-camera="gpsMinDistance: 5"></a-camera>
 
             <a-entity
                 id="mymodel"
@@ -39,10 +39,7 @@
         </a-scene>
 
         <script>
-            const model = document.querySelector("#mymodel");
-
-            model.addEventListener("click", () => {
-                // Change the model to Earth Guardian
+            document.querySelector("#mymodel").addEventListener("click", function (evt) {
                 model.setAttribute("gltf-model", "./Assets/earth-guardian.svg");
             });
         </script>
