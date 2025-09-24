@@ -41,6 +41,7 @@
                 rotation="0 0 0"
                 scale="2 2 2"
                 gps-new-entity-place="latitude: -26.021885; longitude: 28.030929"
+                sound="src: url(./Assets/earth-guardian-theme.mp3); autoplay: false; volume: 1">
                 class="clickable">
                 <a-image
                     id="tapToStart"
@@ -62,6 +63,7 @@
                 model.setAttribute("scale", "10 10 10");
                 model.setAttribute("animation-mixer", "");
                 tapImage.setAttribute("visible", "false");
+                model.components.sound.playSound();
             });
         </script>
     </body>
