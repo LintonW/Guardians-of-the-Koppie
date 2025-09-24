@@ -57,7 +57,10 @@
             const model = document.querySelector("#mymodel");
 
             model.addEventListener("click", () => {
-                model.setAttribute("gltf-model", "./Assets\earth-guardian.svg");
+                console.log("clicked!"); // confirm click fires
+                setTimeout(() => {
+                    model.setAttribute("gltf-model", "./Assets\earth-guardian.svg");
+                }, 100); // small delay
             });
         </script>
     </body>
