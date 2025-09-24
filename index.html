@@ -45,7 +45,7 @@
                 <a-image
                     id="tapToStart"
                     src="./Assets/tap-to-start.svg"
-                    position="0 1.5 0.1"
+                    position="0 1.5 0"
                     width="1"
                     height="1"
                     look-at="[gps-new-camera]">
@@ -58,7 +58,7 @@
             const tapImage = model.querySelector("#tapToStart");
 
             model.addEventListener("click", (e) => {
-                model.setAttribute("gltf-model", "./Assets/magnemite/scene.gltf");
+                model.setAttribute("gltf-model", "./Assets/earth-guardian.svg");
                 model.setAttribute("scale", "1 1 1");
                 model.setAttribute("animation-mixer", "");
                 tapImage.setAttribute("visible", "false");
