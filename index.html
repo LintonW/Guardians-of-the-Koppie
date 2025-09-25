@@ -41,8 +41,16 @@
                 rotation="0 0 0"
                 scale="2 2 2"
                 gps-new-entity-place="latitude: -26.021885; longitude: 28.030929"
-                sound="src: url(./Assets/earth-guardian-theme.mp3); on: click"
                 class="clickable">
+                <!-- Voiceover audio -->
+                <a-sound
+                    src="url(./Assets/earth-guardian-theme.mp3)"
+                    autoplay="true"
+                    on="click"
+                    positional="true"
+                    volume="1"
+                    fade="2000">
+                </a-sound>
                 <a-image
                     id="tapToStart"
                     src="./Assets/tap-to-start.svg"
