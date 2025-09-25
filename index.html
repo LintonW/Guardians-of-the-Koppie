@@ -42,12 +42,12 @@
                 scale="2 2 2"
                 gps-new-entity-place="latitude: -26.021885; longitude: 28.030929"
                 class="clickable">
-                <!-- Voiceover audio -->
+                <!-- Guardian audio -->
                 <a-sound
+                    id="guardianSound"
                     src="url(./Assets/earth-guardian-theme.mp3)"
-                    autoplay="true"
-                    on="click"
-                    positional="true"
+                    autoplay="false"
+                    positional="false"
                     volume="1"
                     fade="2000">
                 </a-sound>
@@ -65,12 +65,19 @@
         <script>
             const model = document.querySelector("#mymodel");
             const tapImage = model.querySelector("#tapToStart");
+            const sound = document.querySelector("#guardianSound");
 
             model.addEventListener("click", (e) => {
+                // Swap the model
                 model.setAttribute("gltf-model", "./Assets/earth-guardian.glb");
                 model.setAttribute("scale", "10 10 10");
                 model.setAttribute("animation-mixer", "");
+
+                //Hide tap prompt
                 tapImage.setAttribute("visible", "false");
+
+                // Play sound
+                sound.components.sound.playSound();
             });
         </script>
     </body>
