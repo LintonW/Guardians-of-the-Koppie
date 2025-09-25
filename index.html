@@ -65,7 +65,7 @@
         <script>
             const model = document.querySelector("#mymodel");
             const tapImage = model.querySelector("#tapToStart");
-            const sound = document.querySelector("#guardianSound");
+            const sound = model.querySelector("a-sound");
 
             model.addEventListener("click", (e) => {
                 // Swap the model
@@ -76,8 +76,12 @@
                 //Hide tap prompt
                 tapImage.setAttribute("visible", "false");
 
-                // Play sound
-                sound.components.sound.playSound();
+                // Play sound if loaded
+                if (sound && sound.components && sound.components.sound) {
+                    sound.components.sound.playSound();
+                } else {
+                    console.warn("Sound component not loaded yet.");
+                }
             });
         </script>
     </body>
