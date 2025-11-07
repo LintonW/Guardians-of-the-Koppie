@@ -32,7 +32,7 @@
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
             renderer="antialias: true; alpha: true">
             <!-- AR Camera with GPS settings -->
-            <a-camera gps-new-camera="gpsMinDistance: 5"
+            <a-camera gps-new-camera="gpsMinDistance: 10"
                 ><a-cursor
                     id="cursor"
                     raycaster="objects: .clickable"
@@ -47,7 +47,7 @@
                 id="mymodel"
                 gltf-model="./Assets/earth-runestone.glb"
                 rotation="0 0 0"
-                scale="2 2 2"
+                scale="1 1 1"
                 gps-new-entity-place="latitude: -26.021973; longitude: 28.030877"
                 class="clickable"
                 look-at="[gps-new-camera]">
@@ -76,7 +76,7 @@
             model.addEventListener("click", (e) => {
                 // Swap the runestone model with the guardian model
                 model.setAttribute("gltf-model", "./Assets/earth-guardian.glb");
-                model.setAttribute("scale", "10 10 10");
+                model.setAttribute("scale", "5 5 5");
                 model.setAttribute("animation-mixer", "");
 
                 // Hide the "Tap to Start" prompt
